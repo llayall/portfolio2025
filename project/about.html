@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Aya Nagasawa Portfolio</title>
+	<meta name="Resource-type" content="Document" />
+    <link rel="icon" href="http://anne.main.jp/favicon.ico" />
+
+<!--	<link rel="stylesheet" type="text/css" href="stylesheets/jquery.fullPage.css" />-->
+	<link rel="stylesheet" type="text/css" href="stylesheets/examples.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/portfolio.css" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script>
+        currentItem = $(".current-item");
+        if (currentItem[0]) {
+            currentItem.css({
+                "width": currentItem.width(),
+                "left": currentItem.position().left
+            });
+        }
+        $("#navigation li").hover(
+            // ホバー時
+            function(){ 
+                // ホバーしているメニューの幅と左位置に変更
+                $("#slide-line").css({
+                    "width": $(this).width(),
+                    "left": $(this).position().left
+                });
+            },
+            // ホバーが外れたとき
+            function(){
+                // カレントメニューがある場合
+                if (currentItem[0]) {
+                    // カレントメニューに下線を戻す
+                    $("#slide-line").css({
+                        "width": currentItem.width(),
+                        "left": currentItem.position().left
+                    });
+                }
+                // カレントメニューがない場合
+                else {
+                    // 下線を消す
+                    $("#slide-line").width(0);
+                }
+            }
+        );
+    </script>
+
+</head>
+<body id="about">
+
+<!--
+    <div class="header">
+        <div class="logo"><a href="index.html">Aya<br>Nagasawa</a></div>
+        <nav id="navigation">
+            <ul class="header_menu">
+                <li><a href="index.html">Works</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <span id="slide-line"></span>
+        </nav>
+    </div>
+-->
+    <div class="header">
+        <div class="logo"><a href="index.html">
+            <img src="imgs/logo.png" width="32" height="32" />
+            <!--            <span>Aya</span><br><span>Nagasawa</span>-->
+            </a>
+        </div>
+        <ul class="header_menu">
+            <li><a href="index.html">Works</a></li>
+            <li><a href="about.html" class="selected">About</a></li>
+        </ul>
+    </div>
+
+
+
+<div id="fullpage">
+
+    <div class="about_cover">
+        <div class="myphoto"><img src="imgs/photo.png" width="120"></div>
+        <div class="myname">長澤 彩</div>
+<!--        <div class="myname2">Nagasawa Aya</div>-->
+        <div class="myjob">UI/UX Designer</div>
+        <div class="about_cover_bk"></div>
+    </div>
+
+    <div class="section">
+        <p>世田谷区在住。岩手県出身。</p>
+        <p>2006年から富士通デザインにて、サーバー監視ミドルウェアなど自社のBtoB製品/サービスのUIデザイン/ガイドライン作成に5年間携わった後、2011年にジャストシステムに入社。UXデザインチームに所属し、BtoC、BtoB、教育など様々な分野の自社製品/サービスのUI/UXデザイン、Webフロントエンド構築を数多く経験しました。開発や企画など関連部署と連携して、ユーザーにもたらす影響、ビジネスのゴール、運用を考慮したUI設計/構築を実施、実現してきました。</p>
+
+
+    </div>
+    <div class="section" style="display: flex; justify-content: center; margin-top:-50px;">
+        <div class="skill">
+            <h3>得意なこと</h3>
+            <ul>
+                <li>ユーザーを考慮したWebデザインとコーディング</li>
+<!--                <li>UIコンポーネント設計をふまえたフロントエンド構築</li>-->
+                <li>UIコンポーネント設計、デザインガイドライン作成</li>
+                <li>メルマガデザインとコーディング</li>
+            </ul>
+        </div>
+	</div>
+
+
+
+    <div class="section">
+        <h3>Tool＆Technology</h3>
+
+        <div class="tool_list">
+            <ul>
+                <li><img src="imgs/photoshop.png" alt="Photoshop"></li>
+                <li><img src="imgs/illustrator.png" alt="Illustrator"></li>
+                <li><img src="imgs/sketch.png" alt="Sketch"></li>
+                <li><img src="imgs/brackets.png" alt="brackets"></li>
+                <li><img src="imgs/sass.png" alt="Sass"></li>
+                <li><img src="imgs/gulp.svg" alt="gulp"></li>
+                <li><img src="imgs/git.svg" alt="Git"></li>
+                <li><img src="imgs/analytics.png" alt="Google Analytics"></li>
+                <li><img src="imgs/optimizely.png" alt="Optimizely"></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+	<div class="section" style="margin-top:20px;">
+        <div class="biography">
+            <ul>
+                <li>
+                    <h3>略歴</h3>
+                </li>
+                <li class="timeline_odd">
+                    <div class="timeline_badge"></div>
+                    <div class="timeline_bioTbl">
+                        <div class="bioTbl_company"><a href="https://www.justsystems.com/" target="_blank">ジャストシステム</a></div>
+                        <div class="bioTbl_job">UI/UXデザイナー</div>
+                        <div class="bioTbl_date">2011/7 - 現在</div>
+                        <div class="bioTbl_body">
+                            BtoC、BtoB、教育機関向け、など様々な分野の製品/サービスのUIデザインを経験しました
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline_even">
+                    <div class="timeline_badge"></div>
+                    <div class="timeline_bioTbl">
+                        <div class="bioTbl_company"><a href="http://www.fujitsu.com/jp/group/fdl/" target="_blank">富士通デザイン</a></div>
+                        <div class="bioTbl_job">UIデザイナー</div>
+                        <div class="bioTbl_date">2006/4 - 2011/6</div>
+                        <div class="bioTbl_body">
+                            ミドルウェア製品、医療システム、交通管制システムとBtoB製品のUIデザインを経験しました
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline_odd">
+                    <div class="timeline_badge"></div>
+                    <div class="timeline_bioTbl">
+                        <div class="bioTbl_company"><a href="https://www.ntt-et.co.jp/" target="_blank">NTTエレクトロニクステクノ</a></div>
+                        <div class="bioTbl_job">WEBデザイナー</div>
+                        <div class="bioTbl_date">2004/3 - 2006/3</div>
+                        <div class="bioTbl_body">
+                            自社や関連会社のWebサイトデザイン/コーディングを担当しました
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline_even">
+                    <div class="timeline_badge school"></div>
+                    <div class="timeline_bioTbl">
+                        <div class="bioTbl_company">職業技術校藤沢校</div>
+                        <div class="bioTbl_job">コンピューターデザインコース</div>
+                        <div class="bioTbl_date">2003/4 - 2004/3</div>
+                        <div class="bioTbl_body">
+                            趣味で作ったフリマサイトが徐々に訪問客が増え人気のサイトと雑誌に掲載されました（今はありません..）
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline_odd">
+                    <div class="timeline_badge"></div>
+                    <div class="timeline_bioTbl">
+                        <div class="bioTbl_company"><a href="http://www.jspnet.co.jp/" target="_blank">ジェイエスピー</a></div>
+                        <div class="bioTbl_job">プログラマー</div>
+                        <div class="bioTbl_date">2000/4 - 2002/9</div>
+                        <div class="bioTbl_body">
+                            大規模ソフトウェア開発のプロセスと、時代の目玉となる製品(FOMA初号機)をリリースするまでのスピード感のある開発現場を経験しました
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline_even">
+                    <div class="timeline_badge school"></div>
+                    <div class="timeline_bioTbl">
+                        <div class="bioTbl_company"><a href="https://www.tsuru.ac.jp/" target="_blank">都留文科大学</a></div>
+                        <div class="bioTbl_job">文学部初等教育学科図工専攻</div>
+                        <div class="bioTbl_date">1996/4 - 2000/3</div>
+                        <div class="bioTbl_body">
+                            油絵を描いたり粘土をこねて造形物を作ったり身近な素材を使った工作をしたりしていました
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline_odd">
+                    <div class="timeline_badge school"></div>
+                    <div class="timeline_bioTbl">
+                        <div class="bioTbl_company">有住中学校／上有住小学校</div>
+                        <div class="bioTbl_job">新聞部／新聞係</div>
+<!--                        <div class="bioTbl_date">XXX</div>-->
+                        <div class="bioTbl_body">
+                            先生の代わりに学級通信を毎週発行したり、文化祭等イベントの前後に毎日手書きの壁新聞を作っていました。情報設計の原点
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+<!--
+        <div class="biography">
+            <h3>略歴</h3>
+
+            <div class="bioTbl">
+                 <div><a href="https://www.justsystems.com/" target="_blank">ジャストシステム</a></div>
+                 <div>UI/UXデザイナー</div>
+                 <div>2011/7 - 現在</div>
+            </div>
+            <div>
+                BtoC、BtoB、教育機関向け、など様々な分野の製品/サービスのUIデザインを経験しました
+            </div>
+            <div class="bioTbl">
+                <div><a href="http://www.fujitsu.com/jp/group/fdl/" target="_blank">富士通デザイン</a></div>
+                 <div>UIデザイナー</div>
+                 <div>2006/4 - 2011/6</div>
+            </div>
+            <div>
+                ミドルウェア製品、医療システム、交通管制システムとBtoB製品のUIデザインを経験しました
+            </div>
+            <div class="bioTbl">
+                 <div><a href="https://www.ntt-et.co.jp/" target="_blank">NTTエレクトロニクステクノ</a></div>
+                 <div>WEBデザイナー</div>
+                 <div>2004/3 - 2006/3</div>
+            </div>
+            <div>
+                自社や関連会社のWebサイトデザイン/コーディングを担当しました
+            </div>
+            <div class="bioTbl">
+                 <div>職業技術校藤沢校</div>
+                 <div>コンピューターデザインコース</div>
+                 <div>2003/4 - 2004/3</div>
+            </div>
+            <div>
+                趣味で作ったフリマサイトが徐々に訪問客が増え人気のサイトと雑誌に掲載されました（今はありません..）
+            </div>
+            <div class="bioTbl">
+                <div class="bioTbl_company"><a href="http://www.jspnet.co.jp/" target="_blank">ジェイエスピー</a></div>
+                <div class="bioTbl_job">プログラマー</div>
+                <div class="bioTbl_date">2000/4 - 2002/9</div>
+            </div>
+            <div>
+                大規模ソフトウェア開発のプロセスと、時代の目玉となる製品を作り上げる開発のスピード感を学びました
+            </div>
+            <div class="bioTbl">
+                <div class="bioTbl_company"><a href="https://www.tsuru.ac.jp/" target="_blank">都留文科大学</a></div>
+                <div class="bioTbl_company">文学部初等教育学科図工専攻</div>
+                <div class="bioTbl_date">1996/4 - 2000/3</div>
+            </div>
+            <div>
+                油絵を描いたり粘土をこねて造形物を作ったり身近な素材を使った工作をしたりしていました
+            </div>
+            <div class="bioTbl">
+                <div class="bioTbl_company">有住中学校／上有住小学校</div>
+                <div class="bioTbl_job">新聞部／新聞係</div>
+                <div class="bioTbl_date">1996/4 - 2000/3</div>
+            </div>
+            <div>
+                先生の代わりに学級通信を毎週発行したり、文化祭等イベントの前後に毎日手書きの壁新聞を作っていました。情報設計の原点
+            </div>
+
+        </div>
+-->
+    </div>
+
+
+
+    <div class="section">
+        <h3>Private Activity</h3>
+
+        <div class="activity">
+
+            <div class="activityTbl">
+                <p style="margin-bottom: 4em;">東日本大震災で少しでも地元の役に立てればと活動した一部をご紹介します</p>
+            </div>
+
+            <div class="activityTbl">
+                <a href="https://www.google.ru/maps/@39.2285725,141.537581,11.68z/data=!4m2!6m1!1s1An8_BDdzfwudS_f5wGfn7uBVGXI" target="_blank">
+                    <p class="title">岩手県気仙郡住田町周辺情報マップ</p>
+                    <p class="date">2011/3 〜</p>
+                    <p>震災後、岩手県沿岸部に向かう人が多くいる中、現地の様子が変わり情報を得にくくなっていることに気づき、震災直後のお店の情報をSNS等で収集しマップに記録・公開しました。SNSで拡散され、現地に行った方から新たな情報を頂き常にブラッシュアップし、多くの方に活用頂けました</p>
+                    <img src="imgs/mymap.jpg" width="100%">
+                </a>
+            </div>
+
+            <div class="activityTbl">
+                <a href="https://www.hack4.jp/2011/07/hack-for-japan-iwate-%E9%81%A0%E9%87%8E%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3%E5%AE%9F%E6%96%BD%E5%A0%B1%E5%91%8A/" target="_blank">
+                    <p class="title">Hack For Japan Iwate アイディアソン・ハッカソン <span style="color:#999;font-size:14px;">＠岩手県遠野市</span></p>
+                    <p class="date">2011/7</p>
+                    <p>ITで復興支援を考えるHack For Japan岩手版の第１回目イベントに参加しました。<br>アイディアソンで出たアイディアを基に５つのチームが発足し、私は情報発信チームに所属。震災直後にたちあがった遠野市のボランティアセンター「遠野まごころネット」のWebサイトデザインに携わりました。</p>
+                    <img src="imgs/photo_Tono0723.jpg" width="100%" class="wsmall">
+                    <a href="http://tonomagokoro.net/" target="_blank">
+                        <img src="imgs/magokoro.jpg" class="wsmall">
+                    </a>
+                </a>
+            </div>
+
+            <div class="activityTbl">
+                <a href="https://kokucheese.com/event/index/36752/" target="_blank">
+                    <p class="title">Hack for Iwate 復興していく三陸の店舗を記録しよう <span style="color:#999;font-size:14px;">＠岩手県釜石市/陸前高田市</p>
+                    <p class="date">2012/9</p>
+                    <p>海外から来たOpenStreetMapのマッパーの方々を案内しながら、釜石市や陸前高田市など復興していく街の地図づくりのお手伝いをしました。</p>
+                    <img src="imgs/photo_h4j_4.jpg" class="wsmall" data-fancybox data-caption="Sprintサービス" data-action="zoom" >
+                    <img src="imgs/photo_h4j_3.jpg" class="wsmall">
+                </a>
+            </div>
+
+            <div class="activityTbl">
+<!--                <a href="" target="_blank">-->
+                <p class="title">いわて未来MeetUp <span style="color:#999;font-size:14px;">＠HUB TOKYO</span></p>
+<!--                </a>-->
+<!--                <p class="title">いわてこだわりBBQ</p>-->
+                <p class="date">2013/3, 2013/7</p>
+                <p style="color:#333;">それまで別々で岩手を応援する活動をしている方々が一同に介したイベント。<br>
+                    各団体のこれまでとこれからの活動報告や、岩手直送の美味しいものを食したり、情報交換をしたり、新しいつながりが生まれ参加者の方々にとって有意義なイベントとなりました。<br>
+                    私はスタッフの１人として、イベント運営の他、スタッフTシャツ・のぼり旗をデザインしました。</p>
+                <img src="imgs/photo_mirai_1.jpg" class="wsmall">
+                <img src="imgs/photo_mirai_2.jpg" class="wsmall">
+                <img src="imgs/photo_mirai_3.jpg" class="wsmall">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        2018 <span>&copy;</span> Aya Nagasawa
+    </div>
+
+</div>
+
+
+</body>
+</html>

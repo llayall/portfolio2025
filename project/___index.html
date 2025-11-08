@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Aya Nagasawa Portofolio</title>
+	<!-- <meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage callback function." />
+	<meta name="keywords"  content="fullpage,jquery,demo,callbac,function,event" /> -->
+	<meta name="Resource-type" content="Document" />
+
+
+	<!-- <link rel="stylesheet" type="text/css" href="stylesheets/ie.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/print.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/screen.css" /> -->
+	<link rel="stylesheet" type="text/css" href="stylesheets/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/examples.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/portfolio.css" />
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="vendors/scrolloverflow.js"></script>
+
+<!-- 
+section1 : top
+section2 : Sprint
+section3 : JustMyshop
+section4 : Pitajob
+section5 : Smilezemi
+section6 : ServerView
+section7 : Medical
+section8 : Traffic
+-->
+
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['whitesmoke', '#F0E274', '#A3D6EF', '#F09999', '#F2AF50', '#B3C6FF', '#AFE2A0', '#CABBEE'],
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage', '7thpage', 'lastPage'],
+				menu: '#menu',
+				afterLoad: function(anchorLink, index){
+
+
+					//section2 : Sprint
+					if(index == 2){
+						//moving the image
+//						$('#section0').find('img').delay(500).animate({
+//							left: '0%'
+//						}, 1500, 'easeOutExpo');
+
+//						$('#section0').find('li').first().fadeIn(1800, function(){
+//							$('#section0').find('li').last().fadeIn(1800);
+//						});;
+
+//                        $('#section0').find('.sprint_service').fadeIn(1800, function(){
+//							$('#section0').find('.sprint_interviewer').fadeIn(1800);
+//						});;
+
+
+                        $('#section2').find('.sprint_service').fadeIn(1200).animate({
+//                              'opacity': 1,
+                              'top': '10px'
+                            },{
+                              duration: 800,
+                              queue: false
+                            });
+                        $('#section2').find('.sprint_interviewer').delay(1200).fadeIn(1200).animate({
+//                              'top': '300px'
+                            },{
+                              duration: 800,
+                              queue: false
+                            });
+                        $('#section2').find('.sprint_monitor').delay(2400).fadeIn(1200).animate({
+//                              'top': '300px'
+                            },{
+                              duration: 800,
+                              queue: false
+                            });
+					}
+
+
+					//section4 : JustMyshop
+					if(anchorLink == '4thPage'){
+						//moving the image
+
+						// $('#section2').find('.intro').delay(500).animate({
+							// left: '0%'
+						// }, 1500, 'easeOutExpo');
+
+//                        $('#section3').find('.intro').delay(500).animate({
+//							left: '0%'
+//						}, 1500, 'easeOutExpo');
+                        $('#section4').find('.jms_pc').delay(2400).fadeIn(3600).animate({
+                              'opacity': 1,
+                              'top': '300px'
+                            },{
+                              duration: 2400,
+                              queue: false
+                            });
+
+                        $('#section4').find('.jms_sp').delay(1200).fadeIn(1200).animate({
+                              'top': '80px'
+                            },{
+                              duration: 2400,
+                              queue: false
+                            });
+					}
+
+
+                    //section3 : Pitajob
+					if(anchorLink == '3rdpage'){
+						//moving the image
+
+                        // ★ fadeinとanimate同時に効かない
+//						$('#section4').find('.intro').delay(500).fadeIn(7200).animate({
+//							left: '0%'
+//						}, 2000, 'easeOutExpo');
+					}
+				}
+			});
+
+            $(".tab_label").on("click",function(){
+                var $th = $(this).index();
+                $(".tab_label").removeClass("active");
+                $(".tab_panel").removeClass("active");
+                $(this).addClass("active");
+                $(".tab_panel").eq($th).addClass("active");
+            });
+
+//            $(".tab_label").on("click",function(){
+//                var $th = $(this).index();
+//                $(".tab_label").removeClass("active");
+//                $(".tab_panel").removeClass("active");
+//                $(this).addClass("active");
+//                $(".tab_panel").eq($th).addClass("active");
+//            });
+
+		});
+
+    </script>
+
+	<style>
+/*
+		#section0 img{
+			left: 130%;
+			position:relative;
+		}
+*/
+
+
+        /* section2 : Sprint */
+        #section2 .sprint_service {
+			display:none;
+			top:-50px;
+		}
+		#section2 .sprint_interviewer,
+		#section2 .sprint_monitor {
+			display:none;
+/*			top:220px;*/
+		}
+
+
+        /* section3 : Pitajob */
+        #section3 .intro{
+/*
+			right: -130%;
+			position:relative;
+*/
+		}
+
+
+        /* section4 : JustMyshop */
+		#section4 .jms_pc{
+/*			display:none;*/
+/*            opacity: 0;*/
+/*			top:-100px;*/
+        }
+		#section4 .jms_sp{
+/*			display:none;*/
+/*			top:-50px;*/
+        }
+
+
+
+        /* section5 : Smilezemi */
+		#section5 .intro{
+
+        }
+
+
+
+        /* section6 : ServerView */
+        #section6 .intro{
+
+        }
+
+
+
+        /* section7 : Medical */
+		#section7 .intro{
+		}
+
+
+
+        /* section8 : Traffic */
+        #section8 .intro{
+		}
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+
+<ul id="menu">
+	<li data-menuanchor="firstPage"><a href="#firstPage">Top</a></li>
+	<li data-menuanchor="secondPage"><a href="#secondPage">Sprint</a></li>
+	<li data-menuanchor="3rdPage"><a href="#3rdPage">Pitajob</a></li>
+	<li data-menuanchor="4thpage"><a href="#4thpage">JustMyshop</a></li>
+	<li data-menuanchor="5thpage"><a href="#5thpage">Smilezemi</a></li>
+	<li data-menuanchor="6thpage"><a href="#6thpage">ServerView</a></li>
+	<li data-menuanchor="7thpage"><a href="#7thpage">Medical</a></li>
+	<li data-menuanchor="lastPage"><a href="#lastPage">Traffic</a></li>
+</ul>
+
+
+<div class="side">
+    <div class="name">
+        <h1>Aya Nagasawa<div>UI/UX Designer</div></h1>
+    </div>
+    
+<!--
+    <ul>
+        <li><a href="index.html">about</a></li>
+        <li><a href="index.html">works</a></li>
+    </ul>
+-->
+</div>
+
+<div id="fullpage">
+
+	<!-- section1 : top -->
+	<div class="section " id="section1">
+		<h1>Works</h1>
+<!--		<p>Works</p>-->
+		<!-- <img src="imgs/fullPage.png" alt="fullPage" /> -->
+	</div>
+
+
+
+    <!-- section2 : Sprint -->
+	<div class="section sprint" id="section2">
+
+		 <div class="title intro">
+             <p><span class="company just">JustSystems</span></p>
+             <p>1on1インタビューサービス</p>
+             <h1>Sprint</h1>
+		</div> 
+
+		<div class="wrap">
+			<div class="imgsContainer">
+
+
+
+
+<!--
+                <ul>
+                    <li class="sprint_service">
+                        <img src="works/sprint_service.png" alt="sprint_service" id="sprint_service" />
+                    </li>
+                    <li class="sprint_interviewer">
+                        <img src="works/sprint_interviewer.png" alt="interviewer" id="sprint_interviewer" />
+                    </li>
+                    <li class="sprint_monitor">
+                        <img src="works/sprint_monitor.png" alt="monitor" id="sprint_monitor" />
+                    </li>
+                </ul>
+-->
+
+
+
+
+                <div class="tab_wrap">
+
+                    <input id="tab1_1" type="radio" name="tab_btn1" checked>
+                    <input id="tab1_2" type="radio" name="tab_btn1">
+                    <input id="tab1_3" type="radio" name="tab_btn1">
+
+                    <div class="tab_area">
+                        <label class="tab1_1_label" for="tab1_1">サービスWeb</label>
+                        <label class="tab1_2_label" for="tab1_2">販促Web</label>
+                        <label class="tab1_3_label" for="tab1_3">サービス紹介Movie</label>
+                    </div>
+
+                    <div class="panel_area">
+                        <div id="panel1_1" class="tab_panel">
+                            <div>
+
+
+                                <div class="product_text">
+                                    <p>
+                                        1on1インタビューサービス「Sprint」のデザイン全般を担当<br>
+                                        ガイドライン、画面/UIパーツのモックアップを提供し、UIの品質を確保
+                                    </p>
+                                </div>
+                                <ul>
+                                    <li class="sprint_service">
+                                        <img src="works/sprint_service.png" alt="sprint_service" id="sprint_service" />
+                                    </li>
+                                    <li class="sprint_monitor">
+                                        <img src="works/sprint_monitor.png" alt="monitor" id="sprint_monitor" />
+                                    </li>
+                                    <li class="sprint_interviewer">
+                                        <img src="works/sprint_interviewer.png" alt="interviewer" id="sprint_interviewer" />
+                                    </li>
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+                        <div id="panel1_2" class="tab_panel">
+                            <div>
+
+                                <div class="product_text">
+                                    <p>
+                                        販促Webサイトのディレクションを実施
+                                    </p>
+                                </div>
+
+                                <ul>
+                                    <li class="sprint_web_1">
+                                        <img src="works/sprint_web_1_pc.JPG" alt="Sprint販促Web" id="sprint_web_1" />
+                                    </li>
+                                    <li class="sprint_web_2">
+                                        <img src="works/sprint_web_2_sp.JPG" alt="Sprint販促Web" id="sprint_web_2" />
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div id="panel1_3" class="tab_panel">
+                            <div>
+
+                                <div class="product_text">
+                                    <p>
+                                        限られた時間内でサービスの特徴やメリットを表現するのに苦労したが、<br>伝えたい内容をまとめ、目標とする１分に近づかることができた<br>
+                                        販促Webや営業時の資料として活用されている
+                                    </p>
+                                </div>
+
+                <div class="videoWrap">
+                    <p><strong>１分でわかるSprint</strong></p>
+					<div class="video"><iframe src="https://www.youtube.com/embed/QuRXNX_kp5Q?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe></div>
+				</div>
+                                <ul>
+
+                                    <li class="sprint_movie_1">
+                                        <img src="works/sprint_movie_1.JPG" alt="Sprint Movie" id="sprint_movie_1" />
+                                    </li>
+                                    <li class="sprint_movie_2">
+                                        <img src="works/sprint_movie_2.JPG" alt="Sprint Movie" id="sprint_movie_2" />
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+			<div class="textContainer">
+
+				<dl>
+					<div>
+						<dt>期間</dt>
+						<dd>2016年12月〜2017年07月</dd>
+					</div>
+					<div>
+						<dt>フェーズ</dt>
+                        <dd><span class="status_new">新規</span> 実装〜リリース準備</dd>
+					</div>
+					<div>
+						<dt>担当</dt>
+						<dd>
+                            <span>デザイン全般</span>
+                            <ul>
+                                <li>
+                                    <p>サービスWeb</p>
+                                    <p>UI設計</p>
+                                    <p>モックアップ作成</p>
+                                    <p>ガイドライン作成</p>
+                                </li>
+                                <li>
+                                    <p>販促Web（<a href="https://chat-interview.com" target="_blank">Link</a>）</p>
+                                        <p>デザイン</p>
+                                </li>
+                                <li>
+                                    <p>サービス紹介Movie（<a href="https://youtu.be/QuRXNX_kp5Q" target="_blank">Link</a>）</p>
+                                    <p>構成検討</p>
+                                    <p>ディレクション</p>
+                                </li>
+                                <li>
+                                    <p>営業資料</p>
+                                    <p>デザイン</p>
+                                </li>
+                            </ul>
+                        </dd>
+					</div>
+					<div>
+						<dt>ポイント</dt>
+						<dd>サービスWebだけでなく販促Webや営業資料などのデザインにも携わりサービスデザイン全体を底上げした<br>
+                            各媒体でアバター使用し、モニターや企業担当者にサービス概要を伝わりやすくした</dd>
+					</div>
+				</dl>
+
+            </div>
+		</div>
+
+	</div>
+
+
+
+    <!-- section4 : Pitajob -->
+	<div class="section pitajob" id="section3">
+
+        <div class="title intro">
+             <p><span class="company just">JustSystems</span></p>
+             <p>転職サービス</p>
+             <h1>ピタジョブ</h1>
+        </div> 
+
+		<div class="wrap">
+			<div class="imgsContainer">
+
+
+                <div class="tab_wrap">
+
+                    <input id="tab1" type="radio" name="tab_btn" checked>
+                    <input id="tab2" type="radio" name="tab_btn">
+                    <input id="tab3" type="radio" name="tab_btn">
+
+                    <div class="tab_area">
+                        <label class="tab1_label" for="tab1">製品イメージ</label>
+                        <label class="tab2_label" for="tab2">メルマガ改善</label>
+                        <label class="tab3_label" for="tab3">新規ページデザイン</label>
+                    </div>
+
+                    <div class="panel_area">
+                        <div id="panel1" class="tab_panel">
+                            <div>
+
+                                <div class="product_text">
+                                    <p>
+                                        転職サイトや企業サイトから集めた20,000件以上の求人情報から、こだわり条件にピッタリな転職先を分かりやすく・カンタンに探せる転職サイト<br>
+                                        求職者向けサイトと企業向けサイトの２サイトあり、求職者サイトの改善担当を１年担当。プロジェクトの目標である採用率アップに向け、UIやフローの改善を進めた
+                                    </p>
+                                </div>
+                                <ul>
+                                    <li class="pitajob_top">
+                                        <img src="works/pitajob_top.png" alt="ピタジョブ" id="pitajob_top" />
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+                        <div id="panel2" class="tab_panel">
+                            <div>
+
+                                <div class="product_text">
+                                    <p>
+                                        メルマガからのサイト流入増を目指す為「件名」と「メルマガデザイン」、特にユーザーが多いスマホのFirstViewの調整を実施。結果、開封率・クリック率ともアップし、メール流入からの応募率が１番高くなる時期もあった
+                                    </p>
+                                </div>
+                                <ul>
+                                    <li class="pitajob_mail_pc">
+                                        <img src="works/pitajob_mail_pc.png" alt="ピタジョブメルマガPC" id="pitajob_mail_pc" />
+                                    </li>
+                                    <li class="pitajob_mail_sp">
+                                        <img src="works/pitajob_mail_sp.png" alt="ピタジョブメルマガSP" id="pitajob_mail_sp" />
+                                    </li>
+                                    <li class="pitajob_mail_sp_2">
+                                        <img src="works/pitajob_mail_sp.png" alt="ピタジョブメルマガSP" id="pitajob_mail_sp_2" />
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div id="panel3" class="tab_panel">
+                            <div>
+
+                                <div class="product_text">
+                                    <p>
+                                        転職活動中に行うやりとりや流れを「求職者」「採用担当者」の各視点で表現し先の見通しを立てやすくなるようにしたり、お祝い金を受け取る為の複雑な条件をイラストで表したりポイントを強調し、ユーザーが行動に移しやすくする為の工夫を施した
+<!--                                        新規ページデザイン検討の際は、企画や開発チームと掲載情報や表現方法を詰めた。PC版スマホ版それぞれで情報構造的な破綻なく、内容がわかりやすく伝わるよう図やイラストを用いた視覚的な表現を心がけた-->
+                                    </p>
+                                </div>
+
+                                <ul>
+
+                                    <li class="pitajob_2_pc">
+                                        <img src="works/pitajob_2_pc.png" alt="ピタジョブ選考の流れPC" id="pitajob_2_pc" />
+                                    </li>
+                                    <li class="pitajob_2_sp">
+                                        <img src="works/pitajob_2_sp.png" alt="ピタジョブ選考の流れSP" id="pitajob_2_sp" />
+                                    </li>
+                                    <li class="pitajob_1_pc">
+                                        <img src="works/pitajob_1_pc.png" alt="ピタジョブお祝い金PC" id="pitajob_1_pc" />
+                                    </li>
+                                    <li class="pitajob_1_sp">
+                                        <img src="works/pitajob_1_sp.png" alt="ピタジョブお祝い金SP" id="pitajob_1_sp" />
+                                    </li>
+
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+			</div>
+
+			<div class="textContainer">
+
+				<dl>
+					<div>
+						<dt>期間</dt>
+						<dd>2015年12月〜2016年11月</dd>
+					</div>
+					<div>
+						<dt>フェーズ</dt>
+						<dd><span class="status_chg">改善</span>リリース後, 運用</dd>
+					</div>
+					<div>
+						<dt>担当</dt>
+						<dd>
+                            <ul>
+                                <li>
+                                    <p>求職者向けメルマガ</p>
+                                    <p>HTMLデザイン/コーディング</p>
+                                    <p>メールシステムを使ったテスト/配信</p>
+                                </li>
+                                <li>
+                                    <p>求職者サイト</p>
+                                    <p>新規ページデザイン</p>
+                                    <p>UI改善, A/Bテスト</p>
+                                </li>
+                            </ul>
+                        </dd>
+					</div>
+					<div>
+						<dt>ポイント</dt>
+						<dd>・メルマガ改善によるCVRアップ<br>
+                            ・情報をわかりやすく伝えるための図やイラストの視覚的な表現<br>
+                            ・A/Bテストによるバナークリエイティブの効果測定</dd>
+					</div>
+					<div>
+						<dt>URL</dt>
+                        <dd><a href="https://lets.pitajob.jp/" target="_blank">ピタジョブ</a></dd>
+					</div>
+				</dl>
+
+			</div>
+		</div>
+
+	</div>
+
+
+
+    <!-- section3 : JustMyshop -->
+	<div class="section jms" id="section4">
+
+        <div class="title intro">
+             <p><span class="company just">JustSystems</span></p>
+             <p>ジャストシステム直営ECサイト</p>
+             <h1>Just MyShop</h1>
+        </div> 
+
+		<div class="wrap">
+			<div class="imgsContainer">
+
+                <div class="product_text">
+                    <p>
+                        ログイン関連のフォーム画面やエラー画面など約40画面をレスポンシブWEBで制作<br>
+                        短かいスケジュールだった為、画面やパーツのテンプレートを先に作成し、<br>それをメンバーに使ってもらう事で効率的に構築できた
+                    </p>
+                </div>
+
+                <ul>
+                    <li class="jms_pc">
+                        <img src="works/jms_pc.png" alt="JustMyShop" id="jms_pc" />
+                    </li>
+                    <li class="jms_sp">
+                        <img src="works/jms_sp.png" alt="JustMyShop" id="jms_sp" />
+                    </li>
+                </ul>
+			</div>
+
+			<div class="textContainer">
+<!--				<h2>Just MyShop</h2>-->
+
+				<dl>
+					<div>
+						<dt>期間</dt>
+						<dd>2017年1月〜2017年7月</dd>
+					</div>
+					<div>
+						<dt>フェーズ</dt>
+						<dd><span class="status_chg">改善</span></dd>
+					</div>
+					<div>
+						<dt>業務概要</dt>
+						<dd>JustMyShop ログイン画面/フロー 改善</dd>
+					</div>
+					<div>
+						<dt>担当</dt>
+						<dd>フロントエンドコーディング</dd>
+					</div>
+					<div>
+						<dt>ポイント</dt>
+						<dd>ログイン機能刷新により会員登録/ログイン関連の全40画面のコーディングを実施。短期間スケジュールの中、複数人のフロントエンド担当をとりまとめ、リリースに間に合わせた</dd>
+					</div>
+					<div>
+						<dt>URL</dt>
+						<dd><a href="https://www.justmyshop.com/account/authn/" target="_blank">Just MyShop ログインページ</a></dd>
+					</div>
+				</dl>
+
+			</div>
+		</div>
+
+	</div>
+
+
+
+    <!-- section5 : Smilezemi -->
+	<div class="section smilezemi" id="section5">
+
+        <div class="title intro">
+             <p><span class="company just">JustSystems</span></p>
+             <p>家庭用タブレット教育サービス</p>
+             <h1>スマイルゼミ みまもるねっと</h1>
+        </div>
+
+		<div class="wrap">
+			<div class="imgsContainer">
+                <div class="product_text">
+                    <p>
+                        スマイルゼミ小学生講座にある学習結果が確認できる保護者向けサイト「みまもるねっと」立ち上げ時のUI設計,フロントエンド構築を担当<br>
+                        日々の学習結果、教科毎の成績など見たい情報がすぐ見つけられるよう注力した
+                    </p>
+                </div>
+                <ul>
+                    <li class="smilezemi_1">
+                        <img src="works/smilezemi_1.jpg" alt="日々のとりくみ" id="smilezemi_1" />
+                    </li>
+                    <li class="smilezemi_2">
+                        <img src="works/smilezemi_2.jpg" alt="学習のきろく" id="smilezemi_2" />
+                    </li>
+                </ul>
+			</div>
+
+			<div class="textContainer">
+
+				<dl>
+					<div>
+						<dt>期間</dt>
+						<dd>2012年04月〜2013年07月</dd>
+					</div>
+					<div>
+						<dt>フェーズ</dt>
+						<dd><span class="status_new">新規</span> 企画〜設計〜実装〜リリース〜運用改善</dd>
+					</div>
+					<div>
+						<dt>担当</dt>
+						<dd>UI設計、フロントエンドコーディング</dd>
+					</div>
+					<div>
+						<dt>ポイント</dt>
+						<dd>日々の学習状況を確認できる保護者向け「みまもるねっと」のUI検討、モックアップ作成</dd>
+					</div>
+					<div>
+						<dt>URL</dt>
+                        <dd><a href="https://smile-zemi.jp/shogaku/support/howto/parent.html" target="_blank">「みまもるねっと」の紹介ページ</a></dd>
+					</div>
+				</dl>
+
+<!--				 <p>XX画面のモックアップを制作</p>-->
+			</div>
+		</div>
+
+	</div>
+
+
+    <!-- section6 : ServerView -->
+	<div class="section rc" id="section6">
+
+        <div class="title intro">
+             <p><span class="company fdl">Fujitsu Design</span></p>
+             <p>サーバ監視ソフトウェア</p>
+             <h1>ServerView ResourceCoordinator</h1>
+        </div> 
+
+		<div class="wrap">
+			<div class="imgsContainer">
+                <ul>
+                    <li class="rc1">
+                        <img src="works/rc1.png" alt="rc Ver13" id="rc1" />
+                    </li>
+                    <li class="rc2">
+                        <img src="works/rc2.png" alt="rc Ver13" id="rc2" />
+                    </li>
+                    <li class="rc3">
+                        <img src="works/rc3.png" alt="rc Ver13" id="rc3" />
+                    </li>
+                    <li class="rc3_2">
+                        <img src="works/rc3_2.png" alt="rc" id="rc3_2" />
+                    </li>
+                </ul>
+			</div>
+
+			<div class="textContainer">
+
+				<dl>
+					<div>
+						<dt>製品概要</dt>
+						<dd>サーバー監視ソフトウェアのUI改善。<br>
+                        Ver13.2まではWindowsアプリケーションだったがWeb化に伴いUIを根本から刷新。</dd>
+					</div>
+					<div>
+						<dt>期間<br>フェーズ</dt>
+						<dd>
+
+                            <ul>
+                                <li>
+                                    <p>Ver13</p>
+                                    <p>2006年10月〜2007年09月<br>
+                                        UI改善
+                                    </p>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+
+                                    <p>Ver13.2</p>
+                                    <p>2007年10月〜2008年09月<br>
+                                        UI改善
+                                    </p>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <p>VE</p>
+                                    <p>2008年10月〜2009年09月<br>
+                                        現場調査/インタビュー, UI設計
+                                    </p>
+                                </li>
+                            </ul>
+                        </dd>
+					</div>
+					<div>
+						<dt>メンバー</dt>
+						<dd>ディレクター1名<br>デザイナー2名</dd>
+					</div>
+					<div>
+						<dt>ポイント</dt>
+						<dd>現場調査等を踏まえ開発チームと仕様検討段階から関わりUI設計に取り組み、直感的に操作できるようグラフィカルな表現を実現した。<br><strong>2009年度GoodDesign賞受賞</strong></dd>
+					</div>
+					<div>
+						<dt>URL</dt>
+						<dd><a href="http://software.fujitsu.com/jp/rcve/merit/" target="_blank">製品ページ</a></dd>
+					</div>
+				</dl>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<!-- section7 : Medical -->
+	<div class="section medical" id="section7">
+
+        <div class="title intro">
+             <p><span class="company fdl">Fujitsu Design</span></p>
+             <p>医事会計システム</p>
+             <h1>HOPE SX/R</h1>
+        </div> 
+
+        <div class="wrap">
+			<div class="imgsContainer">
+                <ul>
+                    <li class="medical_1">
+                        <img src="works/medical_1.png" alt="医事会計システムBefore" id="medical_1" />
+                    </li>
+                    <li class="medical_2">
+                        <img src="works/medical_2.png" alt="医事会計システムAfter" id="medical_2" />
+                    </li>
+                </ul>
+			</div>
+
+			<div class="textContainer">
+
+				<dl>
+<!--
+					<div>
+						<dt>URL</dt>
+						<dd>http://pr.fujitsu.com/jp/news/2010/09/8.html</dd>
+					</div>
+-->
+					<div>
+						<dt>製品概要</dt>
+						<dd>医療事務作業を効率化し、事務スタッフの業務負荷軽減を実現するシステム</dd>
+					</div>
+					<div>
+						<dt>期間</dt>
+						<dd>2010年04月〜2010年10月</dd>
+					</div>
+					<div>
+						<dt>フェーズ</dt>
+						<dd><span class="status_chg">改善</span> VerUPに伴うUI大幅改善 設計〜実装</dd>
+					</div>
+					<div>
+						<dt>メンバー</dt>
+						<dd>ディレクター1名、チーフデザイナー1名、デザイナー3名</dd>
+					</div>
+					<div>
+						<dt>ポイント</dt>
+						<dd>長い間継承されている医療システム特有の操作方法を踏襲しつつ、現在一般的となっているキーボードとマウスを使った操作方法を反映し、熟練のユーザと一般的なPC操作に慣れたユーザの両方に対応できるUIを検討した</dd>
+					</div>
+				</dl>
+
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<!-- section8 : Traffic -->
+	<div class="section traffic" id="section8">
+
+        <div class="title intro">
+             <p><span class="company fdl">Fujitsu Design</span></p>
+             <p>【商談支援】</p>
+             <h1>交通管制システム</h1>
+        </div> 
+
+        <div class="wrap">
+			<div class="imgsContainer">
+                <ul>
+                    <li class="traffic1_1">
+				        <img src="works/traffic1_1.png" alt="現場調査" id="traffic1_1" />
+                    </li>
+                    <li class="traffic1_2">
+				        <img src="works/traffic1_2.png" alt="調査まとめ" id="traffic1_2" />
+                    </li>
+                    <li class="traffic2">
+				        <img src="works/traffic2.png" alt="UI検討" id="traffic2" />
+                    </li>
+                    <li class="traffic3">
+				        <img src="works/traffic3.png" alt="UI提案" id="traffic3" />
+                    </li>
+                </ul>
+			</div>
+
+			<div class="textContainer">
+
+				<dl>
+					<div>
+						<dt>概要</dt>
+						<dd>商談支援<br>高速道路の交通管制システム</dd>
+					</div>
+					<div>
+						<dt>期間</dt>
+						<dd>2009年09月〜2010年03月</dd>
+					</div>
+					<div>
+						<dt>フェーズ</dt>
+						<dd>プレ商談の提案検討</dd>
+					</div>
+					<div>
+						<dt>メンバー</dt>
+						<dd>ディレクター1名<br>チーフデザイナー1名<br>デザイナー3名</dd>
+					</div>
+					<div>
+						<dt>担当</dt>
+						<dd>デザイナーとして、管制室の卓上システム画面UIデザインを担当</dd>
+					</div>
+					<div>
+						<dt>ポイント</dt>
+						<dd>実際のお客様の現場観察により業務と人の流れを把握した上でUI設計/提案</dd>
+					</div>
+				</dl>
+
+			</div>
+		</div>
+
+	</div>
+
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Aya Nagasawa Portfolio</title>
+	<!-- <meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage callback function." />
+	<meta name="keywords"  content="fullpage,jquery,demo,callbac,function,event" /> -->
+	<meta name="Resource-type" content="Document" />
+
+
+	<!-- <link rel="stylesheet" type="text/css" href="stylesheets/ie.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/print.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/screen.css" /> -->
+	<link rel="stylesheet" type="text/css" href="stylesheets/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/examples.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/portfolio.css" />
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="vendors/scrolloverflow.js"></script>
+
+
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['whitesmoke','#dddddd', '#F0E274', '#A3D6EF', '#F09999', '#F2AF50', '#B3C6FF', '#AFE2A0', '#CABBEE'],
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage', '7thpage', 'lastPage'],
+				menu: '#menu',
+				afterLoad: function(anchorLink, index){
+
+
+					//section2 : Sprint
+					if(index == 2){
+						//moving the image
+//						$('#section0').find('img').delay(500).animate({
+//							left: '0%'
+//						}, 1500, 'easeOutExpo');
+
+//						$('#section0').find('li').first().fadeIn(1800, function(){
+//							$('#section0').find('li').last().fadeIn(1800);
+//						});;
+
+//                        $('#section0').find('.sprint_service').fadeIn(1800, function(){
+//							$('#section0').find('.sprint_interviewer').fadeIn(1800);
+//						});;
+
+
+                        $('#section2').find('.sprint_service').fadeIn(1200).animate({
+//                              'opacity': 1,
+                              'top': '10px'
+                            },{
+                              duration: 800,
+                              queue: false
+                            });
+                        $('#section2').find('.sprint_interviewer').delay(1200).fadeIn(1200).animate({
+//                              'top': '300px'
+                            },{
+                              duration: 800,
+                              queue: false
+                            });
+                        $('#section2').find('.sprint_monitor').delay(2400).fadeIn(1200).animate({
+//                              'top': '300px'
+                            },{
+                              duration: 800,
+                              queue: false
+                            });
+					}
+
+
+					//section4 : JustMyshop
+					if(anchorLink == '4thPage'){
+						//moving the image
+
+						// $('#section2').find('.intro').delay(500).animate({
+							// left: '0%'
+						// }, 1500, 'easeOutExpo');
+
+//                        $('#section3').find('.intro').delay(500).animate({
+//							left: '0%'
+//						}, 1500, 'easeOutExpo');
+                        $('#section4').find('.jms_pc').delay(2400).fadeIn(3600).animate({
+                              'opacity': 1,
+                              'top': '300px'
+                            },{
+                              duration: 2400,
+                              queue: false
+                            });
+
+                        $('#section4').find('.jms_sp').delay(1200).fadeIn(1200).animate({
+                              'top': '80px'
+                            },{
+                              duration: 2400,
+                              queue: false
+                            });
+					}
+
+
+                    //section3 : Pitajob
+					if(anchorLink == '3rdpage'){
+						//moving the image
+
+                        // ★ fadeinとanimate同時に効かない
+//						$('#section4').find('.intro').delay(500).fadeIn(7200).animate({
+//							left: '0%'
+//						}, 2000, 'easeOutExpo');
+					}
+				}
+			});
+
+            $(".tab_label").on("click",function(){
+                var $th = $(this).index();
+                $(".tab_label").removeClass("active");
+                $(".tab_panel").removeClass("active");
+                $(this).addClass("active");
+                $(".tab_panel").eq($th).addClass("active");
+            });
+
+//            $(".tab_label").on("click",function(){
+//                var $th = $(this).index();
+//                $(".tab_label").removeClass("active");
+//                $(".tab_panel").removeClass("active");
+//                $(this).addClass("active");
+//                $(".tab_panel").eq($th).addClass("active");
+//            });
+
+		});
+
+    </script>
+
+	<style>
+/*
+		#section0 img{
+			left: 130%;
+			position:relative;
+		}
+*/
+
+
+        /* section2 : Sprint */
+        #section2 .sprint_service {
+			display:none;
+			top:-50px;
+		}
+		#section2 .sprint_interviewer,
+		#section2 .sprint_monitor {
+			display:none;
+/*			top:220px;*/
+		}
+
+
+        /* section3 : Pitajob */
+        #section3 .intro{
+/*
+			right: -130%;
+			position:relative;
+*/
+		}
+
+
+        /* section4 : JustMyshop */
+		#section4 .jms_pc{
+/*			display:none;*/
+/*            opacity: 0;*/
+/*			top:-100px;*/
+        }
+		#section4 .jms_sp{
+/*			display:none;*/
+/*			top:-50px;*/
+        }
+
+
+
+        /* section5 : Smilezemi */
+		#section5 .intro{
+
+        }
+
+
+
+        /* section6 : ServerView */
+        #section6 .intro{
+
+        }
+
+
+
+        /* section7 : Medical */
+		#section7 .intro{
+		}
+
+
+
+        /* section8 : Traffic */
+        #section8 .intro{
+		}
+
+
+
+    </style>
+
+</head>
+<body id="about">
+
+
+
+<ul id="menu">
+	<li data-menuanchor="firstPage"><a href="#firstPage">About</a></li>
+	<li data-menuanchor="secondPage"><a href="#secondPage">biography</a></li>
+<!--
+	<li data-menuanchor="3rdPage"><a href="#3rdPage">Pitajob</a></li>
+	<li data-menuanchor="4thpage"><a href="#4thpage">JustMyshop</a></li>
+-->
+</ul>
+
+
+<div class="side">
+    <div class="name">
+        <h1>Aya Nagasawa<div>UI/UX Designer</div></h1>
+    </div>
+    
+    <ul>
+        <li><a href="index.html">Works</a></li>
+        <li class="selected"><a href="about.html">About</a></li>
+    </ul>
+</div>
+
+<div id="fullpage">
+
+	<!-- section1 : top -->
+	<div class="section " id="section1">
+		<h2>長澤 彩 </h2>
+		<div>Nagasawa Aya </div>
+
+        <p>世田谷区在住。岩手県出身。</p>
+        <p>2006年から富士通デザインにて、サーバー監視ミドルウェアなど自社のBtoB製品/サービ スのUIデザイン/ガイドライン作成に5年間携わった後、2011年にジャストシステムに入社。UXデザインチームに 所属し、BtoC、BtoB、教育機関など様々な分野の自社製品/サービスのUI/UXデザイン、HTML/CSSを使ったフロントエンド構築を数多く経験しました。関連部署と連携して、ユーザーにもたらす影響、ビジネスのゴール、運用を考慮したUI設計/構築を実施、実現してきました。</p>
+
+
+        <div class="skill">
+            <h3>得意なこと</h3>
+            <ul>
+                <li>UIコンポーネント設計をふまえたフロントエンド構築</li>
+                <li>UIガイドライン作成</li>
+                <li>メルマガデザイン/コーディング</li>
+            </ul>
+        </div>
+        
+	</div>
+
+
+	<!-- section2 : 略歴 -->
+	<div class="section" id="section2">
+
+        <div class="biography">
+            <h3>略歴</h3>
+
+            <div class="bioTbl">
+                 <div><a href="https://www.justsystems.com/" target="_blank">ジャストシステム</a></div>
+                 <div>UI/UXデザイナー</div>
+                 <div>2011/7 - 現在</div>
+            </div>
+            <div>
+                BtoC、BtoB、教育機関向け、など様々な分野の製品/サービスのUIデザインを経験しました
+            </div>
+            <div class="bioTbl">
+                <div><a href="http://www.fujitsu.com/jp/group/fdl/" target="_blank">富士通デザイン</a></div>
+                 <div>UIデザイナー</div>
+                 <div>2006/4 - 2011/6</div>
+            </div>
+            <div>
+                ミドルウェア製品、医療システム、交通管制システムとBtoB製品のUIデザインを経験しました
+            </div>
+            <div class="bioTbl">
+                 <div><a href="https://www.ntt-et.co.jp/" target="_blank">NTTエレクトロニクステクノ</a></div>
+                 <div>WEBデザイナー</div>
+                 <div>2004/3 - 2006/3</div>
+            </div>
+            <div>
+                自社や関連会社のWebサイトデザイン/コーディングを担当しました
+            </div>
+            <div class="bioTbl">
+                 <div>職業技術校藤沢校</div>
+                 <div>コンピューターデザインコース</div>
+                 <div>2003/4 - 2004/3</div>
+            </div>
+            <div>
+                趣味で作ったフリマサイトが徐々に訪問客が増え人気のサイトと雑誌に掲載されました（今はありません..）
+            </div>
+            <div class="bioTbl">
+                 <div><a href="http://www.jspnet.co.jp/" target="_blank">ジェイエスピー</a></div>
+                 <div>プログラマー</div>
+                 <div>2000/4 - 2002/9</div>
+            </div>
+            <div>
+                大規模ソフトウェア開発のプロセスと、時代の目玉となる製品を作り上げる開発のスピード感を学びました
+            </div>
+            <div class="bioTbl">
+                 <div><a href="https://www.tsuru.ac.jp/" target="_blank">都留文科大学</a></div>
+                 <div>文学部初等教育学科図工専攻</div>
+                 <div>1996/4 - 2000/3</div>
+            </div>
+            <div>
+                油絵を描いたり粘土をこねて造形物を作ったり身近な素材を使った工作をしたりしていました
+            </div>
+            <div class="bioTbl">
+                 <div>有住中学校／上有住小学校</div>
+                 <div>新聞部／新聞係</div>
+                 <div></div>
+            </div>
+            <div>
+                先生の代わりに学級通信を毎週発行したり、文化祭等イベントの前後に毎日手書きの壁新聞を作っていました。情報設計の原点
+            </div>
+
+        </div>
+    </div>
+
+
+
+	<!-- section1 : top -->
+	<div class="section " id="section1">
+		<h2>Tool＆Technology</h2>
+
+        <div class="tool">
+<!--            <h3>得意なこと</h3>-->
+            <ul>
+                <li><img src="imgs/photoshop.png" alt="Photoshop"></li>
+                <li><img src="imgs/illustrator.png" alt="Illustrator"></li>
+                <li><img src="imgs/sketch.png" alt="Sketch"></li>
+                <li><img src="imgs/sass.png" alt="Sass"></li>
+                <li><img src="imgs/gulp.png" alt="gulp"></li>
+                <li><img src="imgs/git.svg" alt="Git"></li>
+                <li><img src="imgs/ga.jpg" alt="Google Analytics"></li>
+                <li><img src="imgs/optimizely.png" alt="Optimizely"></li>
+            </ul>
+        </div>
+        
+	</div>
+
+
+</div>
+
+
+</body>
+</html>
