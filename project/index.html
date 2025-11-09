@@ -1,194 +1,52 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enter Password</title>
+  <!-- 検索避け（目隠し用）-->
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 520px; margin: 12vh auto; padding: 24px; line-height: 1.6; }
+    input, button { font-size: 16px; padding: 10px; }
+    .row { display: flex; gap: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Password</h1>
+  <p>パスワードを入力してください。</p>
+  <div class="row">
+    <input id="pw" type="password" placeholder="Password" autocomplete="current-password" />
+    <button id="go">Enter</button>
+  </div>
+  <p id="msg" style="color:#c00;"></p>
 
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Aya Nagasawa Portfolio</title>
-        <meta name="Resource-type" content="Document" />
-        <link rel="icon" href="http://anne.main.jp/favicon.ico" />
+  <script>
+    // ==== 必要に応じて変更 ====
+    const PASSWORD = "your-password"; // ← 任意の文字列に変更
+    // ここはあなたの公開パス（末尾スラッシュ注意）
+    const BASE = "/portfolio2025/project/";
+    const AFTER_LOGIN = BASE + "home.html";
+    const KEY = "portfolio2025_auth_ok";
+    // ===========================
 
-        <!--	<link rel="stylesheet" type="text/css" href="stylesheets/jquery.fullPage.css" />-->
-        <link rel="stylesheet" type="text/css" href="stylesheets/examples.css" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/portfolio.css" />
-<!--        <link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet">-->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    // 既に認証済みならすぐ遷移
+    if (localStorage.getItem(KEY) === "1") {
+      location.replace(AFTER_LOGIN);
+    }
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
-        <script>
-            currentItem = $(".current-item");
-            if (currentItem[0]) {
-                currentItem.css({
-                    "width": currentItem.width(),
-                    "left": currentItem.position().left
-                });
-            }
-            $("#navigation li").hover(
-                // ホバー時
-                function(){ 
-                    // ホバーしているメニューの幅と左位置に変更
-                    $("#slide-line").css({
-                        "width": $(this).width(),
-                        "left": $(this).position().left
-                    });
-                },
-                // ホバーが外れたとき
-                function(){
-                    // カレントメニューがある場合
-                    if (currentItem[0]) {
-                        // カレントメニューに下線を戻す
-                        $("#slide-line").css({
-                            "width": currentItem.width(),
-                            "left": currentItem.position().left
-                        });
-                    }
-                    // カレントメニューがない場合
-                    else {
-                        // 下線を消す
-                        $("#slide-line").width(0);
-                    }
-                }
-            );
-        </script>
-
-    </head>
-    <body id="works">
-
-        <!--
-<div class="header">
-<div class="logo"><a href="index.html">Aya<br>Nagasawa</a></div>
-<div id="navigation">
-<ul class="header_menu">
-<li><a href="index.html">Works</a></li>
-<li><a href="about.html">About</a></li>
-</ul>
-<span id="slide-line"></span>
-</div>
-</div>
--->
-        <div class="header">
-            <div class="logo"><a href="index.html">
-                <img src="imgs/logo.png" width="32" height="32" />
-                <!--            <span>Aya</span><br><span>Nagasawa</span>-->
-                </a>
-            </div>
-            <ul class="header_menu">
-                <li><a href="index.html" class="selected">Works</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </div>
-
-        <div class="title_img"></div>
-
-        <div class="section">
-
-            <div class="title">
-                <!--                    <h1 class="name">Aya Nagasawa</h1>-->
-                <h1 class="name">
-                    Aya NAGASAWA's<br>
-                    Portfolio</h1>
-            </div>
-            <!--                <h3>Tool＆Technology</h3>-->
-
-            <div class="work_list">
-                <ul>
-
-                    <li class="work_sprint">
-                        <a href="sprint.html">
-                            <div class="work_image">
-                                <!--                            <span class="btoB"> BtoB</span>-->
-                                <img src="works/sprint_top.png" alt="Sprint" width="100%">
-                            </div>
-                            <div class="work_name"><span class="btoB">BtoB</span>Sprint</div>
-                            <div class="work_text">UI/UXデザイン<br>ガイドライン作成<br>フロントエンドコーディング<br>Webサイトディレクション<br>動画ディレクション<br>営業資料作成</div>
-
-                        </a>
-                    </li>
-
-                    <li class="work_pitajob">
-                        <a href="pitajob.html">
-                            <div class="work_image">
-                                <!--                            <span class="btoC"> BtoC</span>-->
-                                <img src="works/pitajob_top.jpg" alt="ピタジョブ" width="100%">
-                            </div><div class="work_name"><span class="btoC">BtoC</span>ピタジョブ</div>
-                            <div class="work_text">UI/UXデザイン<br>HTMLメールデザイン/コーディング</div>
-                        </a>
-                    </li>
-
-                    <li class="work_jms">
-                        <a href="jms.html">
-                            <div class="work_image">
-                                <!--                            <span class="btoC"> BtoC</span>-->
-                                <img src="works/jms_top.png" alt="Just Myshop" width="100%">
-                            </div>
-                            <div class="work_name"><span class="btoC">BtoC</span>Just Myshop</div>
-                            <div class="work_text">ガイドライン作成<br>フロントエンド構築</div>
-
-                        </a>
-                    </li>
-
-                    <li class="work_smilezemi">
-                        <a href="smilezemi.html">
-                            <div class="work_image">
-                                <!--                            <span class="btoC"> BtoC</span>-->
-                                <img src="works/smilezemi_top.jpg" alt="スマイルゼミ" width="100%">
-                            </div>
-                            <div class="work_name"><span class="education">教育</span>スマイルゼミ</div>
-                            <div class="work_text">UI/UXデザイン<br>教材作成<br>HTMLメールデザイン/コーディング</div>
-                        </a>
-                    </li>
-
-                    <li class="work_cocoal">
-                        <a href="cocoal.html">
-                            <div class="work_image">
-                                <!--                            <span class="btoC"> BtoC</span>-->
-                                <img src="works/cocoal_top.jpg" alt="ココアル" width="100%">
-                            </div>
-                            <div class="work_name"><span class="btoC">BtoC</span>ココアル</div>
-                            <div class="work_text">フロントエンド構築</div>
-                        </a>
-                    </li>
-
-                    <li class="work_serverview">
-                        <a href="serverview.html">
-                            <div class="work_image">
-                                <!--                            <span class="btoB">BtoB</span>-->
-                                <img src="works/rc_top.jpg" alt="サーバー監視システム" width="100%">
-                            </div>
-                            <div class="work_name"><span class="btoB">BtoB</span>サーバー監視システム</div>
-                            <div class="work_text">UI/UXデザイン<br>ガイドライン作成</div>
-                        </a>
-                    </li>
-
-                    <li class="work_medical">
-                        <a href="medical.html">
-                            <div class="work_image">
-                                <img src="works/medical_top.jpg" alt="医療システム" width="100%">
-                            </div>
-                            <div class="work_name"><span class="btoB">BtoB</span>医事会計システム</div>
-                            <div class="work_text">UIデザイン</div>
-                        </a>
-                    </li>
-
-                    <li class="work_traffic">
-                        <a href="traffic.html">
-                            <div class="work_image">
-                                <img src="works/traffic_top.jpg" alt="医療システム" width="100%">
-                            </div>
-                            <div class="work_name"><span class="btoB">BtoB</span>交通管制システム</div>
-                            <div class="work_text">UIデザイン</div>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer">
-            2018 <span>&copy;</span> Aya Nagasawa
-        </div>
-
-    </body>
+    document.getElementById("go").addEventListener("click", () => {
+      const v = document.getElementById("pw").value;
+      if (v === PASSWORD) {
+        localStorage.setItem(KEY, "1");
+        location.href = AFTER_LOGIN;
+      } else {
+        document.getElementById("msg").textContent = "パスワードが違います。";
+      }
+    });
+    document.getElementById("pw").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") document.getElementById("go").click();
+    });
+  </script>
+</body>
 </html>
